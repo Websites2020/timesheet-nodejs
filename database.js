@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
-var urlB = "mongodb://localhost:27017/mydb";
+var url = "mongodb://heroku_lsmczchn:3u9q48u7362s8u76hlq3ki6fh0@ds133086.mlab.com:33086/heroku_lsmczchn" || "mongodb://localhost:27017/";
+var urlB = "mongodb://heroku_lsmczchn:3u9q48u7362s8u76hlq3ki6fh0@ds133086.mlab.com:33086/heroku_lsmczchn" || "mongodb://localhost:27017/mydb";
 
 MongoClient.connect(urlB, function(err, db) {
     if (err) throw err;

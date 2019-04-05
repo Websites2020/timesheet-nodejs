@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+var database = require('./database.js');
+var url = "mongodb://heroku_lsmczchn:3u9q48u7362s8u76hlq3ki6fh0@ds133086.mlab.com:33086/heroku_lsmczchn" || "mongodb://localhost:27017/";
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.get('/employee/:id', function(req, res){
     console.log(req.params.id);
@@ -23,4 +24,4 @@ app.get('/employee/:id', function(req, res){
       });
 });
 
-app.listen(port, () => console.log(`Time Sheet app listening on port ${port}!`))
+app.listen(port, () => console.log(`Time Sheet app listening on port ${port}!`));
