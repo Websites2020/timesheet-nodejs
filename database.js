@@ -53,7 +53,7 @@ var MongoClient = require('mongodb').MongoClient;
 //     });
 
 
-MongoClient.connect(encodeURI(process.env.MONGODB_URI2), { useNewUrlParser: true }, function(err, db) {
+MongoClient.connect(process.env.MONGODB_URI2, { useNewUrlParser: true }, function(err, db) {
     if (err) throw err;
     var dbo = db.db("heroku_lsmczchn");
     // var dbo = db.db("mydb");
@@ -80,7 +80,7 @@ MongoClient.connect(encodeURI(process.env.MONGODB_URI2), { useNewUrlParser: true
     });
   }); 
 
-  MongoClient.connect(encodeURI(process.env.MONGODB_URI2), { useNewUrlParser: true }, function(err, db) {
+  MongoClient.connect(process.env.MONGODB_URI2, { useNewUrlParser: true }, function(err, db) {
     if (err) throw err;
     var dbo = db.db("heroku_lsmczchn");
     // var dbo = db.db("mydb");

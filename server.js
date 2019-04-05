@@ -12,7 +12,7 @@ app.get('/employee/:id', function(req, res){
     console.log(req.params.id);
     var employeeNo = req.params.id;
 
-    MongoClient.connect(encodeURI(process.env.MONGODB_URI2), { useNewUrlParser: true }, function(err, db) {
+    MongoClient.connect(process.env.MONGODB_URI2, { useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db("heroku_lsmczchn");
         // var dbo = db.db("mydb");
