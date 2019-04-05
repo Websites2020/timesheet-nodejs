@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $("#spinner").hide();
     $('#employeeFormBtn').on("click", function() {
-        $("#spinner").show();
+        $("#spinner").show().delay(6000);
         console.log("form works")
         $('#result').html('');
         $('#resultTable').html('');
