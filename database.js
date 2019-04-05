@@ -1,42 +1,39 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = process.env.MONGODB_URI2;
 // var url = "mongodb://localhost:27017/";
-var urlB = process.env.MONGODB_URI;
+// var urlB = process.env.MONGODB_URI;
 // var urlB = "mongodb://localhost:27017/mydb";
-const express = require('express');
-const app = express();
 
-app.post('/createDB', function(req, res){
-MongoClient.connect(urlB, function(err, db) {
-    if (err) throw err;
-    console.log("Database created!");
-    db.close();
-});
-});
+// MongoClient.connect(urlB, function(err, db) {
+//     if (err) throw err;
+//     console.log("Database created!");
+//     db.close();
+// });
 
-app.post('/delete', function(req, res){
-MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("heroku_lsmczchn");
-    // var dbo = db.db("mydb");
-    dbo.dropCollection("employee1", function(err, delOK) {
-      if (err) throw err;
-      if (delOK) console.log("employee1 Collection deleted");
-      db.close();
-    });
-  });
 
-  MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("heroku_lsmczchn");
-    // var dbo = db.db("mydb");
-    dbo.dropCollection("employee2", function(err, delOK) {
-      if (err) throw err;
-      if (delOK) console.log("employee2 Collection deleted");
-      db.close();
-    });
-  });
-});
+
+// MongoClient.connect(url, function(err, db) {
+//     if (err) throw err;
+//     // var dbo = db.db("heroku_lsmczchn");
+//     var dbo = db.db("mydb");
+//     dbo.dropCollection("employee1", function(err, delOK) {
+//       if (err) throw err;
+//       if (delOK) console.log("employee1 Collection deleted");
+//       db.close();
+//     });
+//   });
+
+//   MongoClient.connect(url, function(err, db) {
+//     if (err) throw err;
+//     // var dbo = db.db("heroku_lsmczchn");
+//     var dbo = db.db("mydb");
+//     dbo.dropCollection("employee2", function(err, delOK) {
+//       if (err) throw err;
+//       if (delOK) console.log("employee2 Collection deleted");
+//       db.close();
+//     });
+//   });
+// });
 
 // MongoClient.connect(url, function(err, db) {
 //     if (err) throw err;
@@ -56,9 +53,8 @@ MongoClient.connect(url, function(err, db) {
 //         console.log("employee2 Collection created!");
 //         db.close();
 //     });
-// });
 
-app.post('/deploy', function(req, res){
+
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("heroku_lsmczchn");
@@ -112,6 +108,3 @@ MongoClient.connect(url, function(err, db) {
       db.close();
     });
   });
-});
-
- 
