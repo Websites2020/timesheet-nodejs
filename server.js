@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 var database = require("./database");
 var MongoClient = require('mongodb').MongoClient;
-var url = process.env.MONGODB_URI2;
+// var url = process.env.MONGODB_URI2;
 // var url = "mongodb://localhost:27017/";
 
 app.use(express.static('public'));
@@ -12,7 +12,7 @@ app.get('/employee/:id', function(req, res){
     console.log(req.params.id);
     var employeeNo = req.params.id;
 
-    MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
+    MongoClient.connect(encodeURI(process.env.MONGODB_URI2), { useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db("heroku_lsmczchn");
         // var dbo = db.db("mydb");
