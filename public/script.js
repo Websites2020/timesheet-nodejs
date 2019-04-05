@@ -1,7 +1,5 @@
 $(document).ready(function() {
-    $("#spinner").hide();
     $('#employeeFormBtn').on("click", function() {
-        $("#spinner").show().delay(12000);
         console.log("form works")
         $('#result').html('');
         $('#resultTable').html('');
@@ -12,7 +10,6 @@ $(document).ready(function() {
             url: '/employee/' + text,
             dataType: "json",
            }).done(function( data ) {
-                $("#spinner").hide();
                 if (data == "") {
                     $('#result').html('');
                 } else {
