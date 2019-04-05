@@ -25,4 +25,24 @@ $(document).ready(function() {
             console.log("data returned")
         });
     });
-});
+
+    $.ajax({
+        method: "POST",
+        url: '/createDB',
+       }).done(function( data ) {
+           console.log("db created")
+       });
+    $.ajax({
+        method: "POST",
+        url: '/delete',
+        }).done(function( data ) {
+            console.log("collections deleted")
+    });
+    $.ajax({
+        method: "POST",
+        url: '/deploy',
+        }).done(function( data ) {
+            console.log("collections created")
+    });
+
+});  // end document ready

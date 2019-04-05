@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
+var database = require("database.js");
 var MongoClient = require('mongodb').MongoClient;
-var database = require('./database.js');
-var url = "mongodb://heroku_lsmczchn:3u9q48u7362s8u76hlq3ki6fh0@ds133086.mlab.com:33086/heroku_lsmczchn" || "mongodb://localhost:27017/";
+var url = process.env.MONGODB_URI2;
+// var url = "mongodb://localhost:27017/";
 
 app.use(express.static('public'));
 
@@ -13,7 +14,7 @@ app.get('/employee/:id', function(req, res){
 
     MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("mydb");
+        var dbo = db.db("heroku_lsmczchn");
         dbo.collection(employeeNo).find({}, { projection: { _id: 0 } }).toArray(function(err, result) {
           if (err) throw err;
           // res.send(result);
