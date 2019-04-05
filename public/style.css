@@ -2,10 +2,34 @@ h1 {
     color: red;
 }
 
+.centered {
+    text-align: center;
+}
+
+#spinner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%;  */
+}
+
+form {
+    /* display: inline-block; */
+    margin: 0 auto; 
+    width: 75%;
+    float: left;
+}
+
+#employeeFormBtn {
+    /* display: block; */
+    margin: 0 0 0 20px;
+    width: 20%;
+}
+
 table, th {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     table-layout: fixed ;
-    width: 40% ;
+    width: 100% ;
     text-align: center;
     margin-left:auto; 
     margin-right:auto;
@@ -13,6 +37,6 @@ table, th {
 }
 
 td {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 33% ;
   } 

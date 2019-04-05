@@ -17,7 +17,7 @@ app.get('/employee/:id', function(req, res){
           if (err) throw err;
           // res.send(result);
           res.json(result);
-          console.log(result[4].date);
+          console.log("data sent");
           db.close();
         });
       });
