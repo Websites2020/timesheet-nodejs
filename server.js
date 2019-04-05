@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
@@ -23,13 +23,4 @@ app.get('/employee/:id', function(req, res){
       });
 });
 
-// NEW: Handle request for a list of all books
-// app.get('/books', function(req, res){
-//   res.send('A list of books should go here');
-// });
-
-// app.get('*', function(req, res){
-//   res.send('Hello World');
-// });
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Time Sheet app listening on port ${port}!`))

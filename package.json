@@ -1,16 +1,12 @@
 {
-  "name": "node-js-sample",
-  "version": "0.2.0",
-  "description": "A sample Node.js app using Express 4",
-  "main": "index.js",
+  "name": "node-js-timesheet",
+  "description": "A Node.js app using Express 4",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
     "mongodb": "^3.2.2"
-  },
-  "engines": {
-    "node": "4.0.0"
   }
 }
