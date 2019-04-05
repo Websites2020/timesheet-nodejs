@@ -6,22 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" type="text/css" href=".public/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
     <h1>Hello</h1>
-    <form method="GET" action="/employee" id="employeeForm">
+    <form id="employeeForm">
         <select name="employeeList">
             <option value=employee1>Employee 1</option>
             <option value=employee2>Employee 2</option>
             <option value=employee3>Employee 3</option>
             <option value=employee4>Employee 4</option>
         </select>
-        <input type="submit">
+        
         <!-- <input type="text" name="username">
         <input type="submit"> -->
       </form>
+      <button id="employeeFormBtn">Submit</button>
       <br>
-      
+      <div id="result"></div>
 </body>
 </html>
