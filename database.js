@@ -1,14 +1,14 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = process.env.MONGODB_URI2;
 // var url = "mongodb://localhost:27017/";
-// var urlB = process.env.MONGODB_URI;
+var urlB = process.env.MONGODB_URI;
 // var urlB = "mongodb://localhost:27017/mydb";
 
-// MongoClient.connect(urlB, function(err, db) {
-//     if (err) throw err;
-//     console.log("Database created!");
-//     db.close();
-// });
+MongoClient.connect(urlB, function(err, db) {
+    if (err) throw err;
+    console.log("Database created!");
+    db.close();
+});
 
 
 
@@ -55,7 +55,7 @@ var url = process.env.MONGODB_URI2;
 //     });
 
 
-MongoClient.connect(url, function(err, db) {
+MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
     if (err) throw err;
     var dbo = db.db("heroku_lsmczchn");
     // var dbo = db.db("mydb");
@@ -82,7 +82,7 @@ MongoClient.connect(url, function(err, db) {
     });
   }); 
 
-  MongoClient.connect(url, function(err, db) {
+  MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
     if (err) throw err;
     var dbo = db.db("heroku_lsmczchn");
     // var dbo = db.db("mydb");
