@@ -80,7 +80,7 @@ $(document).ready(function() {
                     },
                     error: function (jqXHR, textStatus, errorThrown)
                     {
-                        alert("something went wrong.  Unable to clock out")
+                        alert("something went wrong.  Unable to clear times")
                     }
                    });
             });

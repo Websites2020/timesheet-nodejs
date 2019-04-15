@@ -93,10 +93,10 @@ MongoClient.connect(process.env.MONGODB_URI2, function(err, db) {
 app.post('/delete/:id', function(req, res){
 MongoClient.connect(process.env.MONGODB_URI2, function(err, db) {
 // MongoClient.connect("mongodb://localhost:27017/mydb", function(err, db) {
-  // var employeeNo = req.params.id;
+  var employeeNo = req.params.id;
   if (err) throw err;
   var dbo = db.db("heroku_lsmczchn");
-  var dbo = db.db("mydb");
+  // var dbo = db.db("mydb");
   dbo.dropCollection(employeeNo, function(err, delOK) {
     if (err) throw err;
     if (delOK) console.log("employee1 Collection deleted");
